@@ -16,7 +16,8 @@ if (import.meta.env.DEV) {
             url: {
                 loginUrl: "?pageId=login.ftl",
                 registrationUrl: "?pageId=register.ftl",
-                resetPasswordUrl: "?pageId=login-reset-password.ftl"
+                resetPasswordUrl: "?pageId=login-reset-password.ftl",
+                verifyEmailUrl: "?pageId=login-verify-email.ftl"
             },
             realm: {
                 displayName: "SotaUni",
