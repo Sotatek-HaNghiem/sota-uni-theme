@@ -46,6 +46,31 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
 
     const { isReadyToRender } = useInitialize({ kcContext, doUseDefaultCss });
 
+    useEffect(() => {
+        if (!isReadyToRender) return;
+
+        const setPlaceholders = () => {
+            const inputs = document.querySelectorAll("#kc-content input");
+            inputs.forEach(input => {
+                const name = input.getAttribute("name");
+                if (name) {
+                    const key = `${name}.placeholder`;
+                    const placeholder = msgStr(key as any);
+                    if (placeholder && placeholder !== key) {
+                        input.setAttribute("placeholder", placeholder);
+                    }
+                }
+            });
+        };
+
+        setPlaceholders();
+
+        const observer = new MutationObserver(setPlaceholders);
+        observer.observe(document.body, { childList: true, subtree: true });
+
+        return () => observer.disconnect();
+    }, [i18n, isReadyToRender]);
+
     if (!isReadyToRender) {
         return null;
     }

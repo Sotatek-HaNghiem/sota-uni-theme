@@ -136,7 +136,7 @@ a:hover {
 .kcHeaderTitle {
     color: #111827 !important;
     font-weight: 600 !important;
-    font-size: 32px !important;
+    font-size: 26px !important;
 }
 
 .kcHeaderDescription {
@@ -147,7 +147,7 @@ a:hover {
 }
 
 .kcFormOptionsWrapperClass {
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .kcGoogleLoginBtn {
@@ -172,7 +172,6 @@ a:hover {
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 40px 32px !important;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-top: none !important;
@@ -290,10 +289,10 @@ a:hover {
 }
 
 .form-group label {
+    color: #4b5563;
+    font-weight: 500;
     font-size: 14px;
-    font-weight: 600;
-    color: var(--text-main);
-    margin-bottom: 8px;
+    margin-bottom: 4px;
 }
 
 .form-control,
@@ -308,6 +307,30 @@ input.pf-c-form-control {
     width: 100%;
     box-sizing: border-box !important;
     height: 48px !important;
+}
+
+::placeholder {
+    color: #9ca3af !important;
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    color: #9ca3af !important;
+}
+
+::-ms-input-placeholder {
+    color: #9ca3af !important;
+}
+
+/* Ẩn dấu chấm than đỏ và các biểu tượng lỗi */
+.pf-c-form-control {
+    background-image: none !important;
+}
+
+.pf-c-helper-text__item-icon,
+.kcInputErrorMessageIconClass,
+[class*="kcFeedbackErrorIcon"] {
+    display: none !important;
 }
 
 .form-control:focus,
@@ -333,6 +356,7 @@ input.pf-c-form-control:focus {
 .pf-c-input-group #password-confirm {
     border-top-right-radius: 0 !important;
     border-bottom-right-radius: 0 !important;
+    border-right: none !important;
 }
 
 .input-group-append .btn,
@@ -349,10 +373,6 @@ input.pf-c-form-control:focus {
     &::after {
         border: none;
     }
-}
-
-.form-group label {
-    color: #4b5563;
 }
 
 .checkbox,
@@ -444,17 +464,89 @@ button[type="submit"]:active {
     transform: translateY(0);
 }
 
-#kc-register-form .policy {
-    display: flex;
-    align-items: center;
-    padding: 0px 20px;
+.pf-c-form-control[aria-invalid="true"] {
+    border: 1px solid #ef4444 !important;
 }
 
-#kc-register-form label {
+.pf-c-form-control[aria-invalid="true"] + .pf-c-button.pf-m-control {
+    border-color: #ef4444 !important;
+}
+
+.kcInputErrorMessageClass {
     font-size: 14px;
-    margin-bottom: 0px;
-    margin-top: 4px;
-    font-weight: 400;
+    color: #ef4444;
+}
+
+.pf-c-button:disabled {
+    cursor: not-allowed;
+    pointer-events: unset;
+}
+
+#kc-form-buttons {
+    margin-top: 0;
+}
+
+#kc-form-wrapper,
+#kc-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#kc-form-login,
+#kc-register-form,
+#kc-reset-password-form {
+    width: 360px;
+}
+
+#kc-register-form .kcLabelWrapperClass {
+    padding: 0;
+}
+
+#kc-register-form .kcInputWrapperClass {
+    padding: 0;
+}
+
+#kc-register-form .kcFormButtonsClass {
+    margin: 0;
+    padding: 0;
+}
+
+#kc-info {
+    margin-top: 0;
+}
+
+.kcFormHeaderClass {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.kcHeaderContainer {
+    width: 360px;
+}
+
+#kc-reset-password-form .form-group {
+    margin: 0;
+}
+
+#kc-reset-password-form .kcInputWrapperClass {
+    padding: 0;
+}
+
+#kc-reset-password-form .kcLabelWrapperClass {
+    padding: 0;
+}
+
+#kc-reset-password-form .kcFormOptionsClass {
+    padding: 0;
+}
+
+#kc-reset-password-form .kcFormButtonsClass {
+    padding: 0;
 }
 
 #kc-reset-password-form .kcFormSettingClass {
@@ -468,10 +560,6 @@ button[type="submit"]:active {
     margin-top: 0px;
 }
 
-#kc-reset-password-form .kcButtonClass {
-    margin: 0px;
-}
-
 #kc-reset-password-form .kcFormOptionsWrapperClass {
     border-radius: 8px;
     border: 1px solid var(--border-color);
@@ -479,6 +567,17 @@ button[type="submit"]:active {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 8px;
+
+    &::after {
+        content: url("/assets/icon-back.svg");
+        width: 20px;
+        height: 20px;
+    }
 }
 
 #kc-reset-password-form .kcFormOptionsWrapperClass span a {
@@ -545,7 +644,6 @@ button[type="submit"]:active {
     }
 
     .card-pf {
-        padding: 24px 20px !important;
         border-radius: 16px !important;
     }
 

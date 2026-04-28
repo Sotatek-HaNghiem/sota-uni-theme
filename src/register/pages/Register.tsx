@@ -25,8 +25,7 @@ export default function Register(
     const { url, messagesPerField } = kcContext;
     const { msg, msgStr } = i18n;
     const [isFormValid, setIsFormValid] = useState(false);
-    const [isTermsAccepted, setIsTermsAccepted] = useState(false);
-    const isRegisterButtonDisabled = !isFormValid || !isTermsAccepted;
+    const isRegisterButtonDisabled = !isFormValid;
 
     return (
         <Template
@@ -63,23 +62,9 @@ export default function Register(
                     doMakeUserConfirmPassword={doMakeUserConfirmPassword}
                 />
 
-                <div className="policy">
-                    <input
-                        type="checkbox"
-                        id="terms-check"
-                        name="terms-accepted"
-                        required
-                        checked={isTermsAccepted}
-                        onChange={e => setIsTermsAccepted(e.target.checked)}
-                    />
-                    <label htmlFor="terms-check">
-                        {msg("accept")} <a href="#">{msg("termsAndPolicy")}</a>
-                    </label>
-                </div>
-
                 <div className={kcClsx("kcFormGroupClass")}>
                     <div id="kc-form-buttons" className={kcClsx("kcFormButtonsClass")}>
-                        <input
+                        <button
                             className={clsx(
                                 kcClsx("kcButtonClass"),
                                 kcClsx("kcButtonPrimaryClass"),
@@ -87,9 +72,10 @@ export default function Register(
                                 kcClsx("kcButtonLargeClass")
                             )}
                             type="submit"
-                            value={msgStr("doRegister")}
                             disabled={isRegisterButtonDisabled}
-                        />
+                        >
+                            {msgStr("doRegister")}
+                        </button>
                     </div>
                 </div>
             </form>
