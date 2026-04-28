@@ -587,6 +587,21 @@ button[type="submit"]:active {
     outline: none;
 }
 
+.kcVerifyEmailContainer {
+    width: 360px;
+}
+
+.kcVerifyEmailContainer .kcContentContainer {
+    font-size: 16px;
+    font-weight: 400;
+    color: #6b7280;
+    text-align: center;
+}
+
+.kcVerifyEmailContainer .kcEmailVerify {
+    color: var(--primary-color);
+}
+
 /* INFO AREA (Không có tài khoản? Đăng ký) */
 #kc-info-wrapper {
     background: transparent !important;

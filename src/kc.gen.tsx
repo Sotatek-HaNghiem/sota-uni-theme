@@ -35,6 +35,7 @@ declare global {
 export const KcLoginPage = lazy(() => import("./login/KcPage"));
 export const KcRegisterPage = lazy(() => import("./register/KcPage"));
 export const KcResetPasswordPage = lazy(() => import("./reset-password/KcPage"));
+export const KcVerifyEmailPage = lazy(() => import("./verify-email/KcPage"));
 
 export function KcPage(props: { kcContext: KcContext; fallback?: ReactNode }) {
     const { kcContext, fallback } = props;
@@ -48,6 +49,9 @@ export function KcPage(props: { kcContext: KcContext; fallback?: ReactNode }) {
                         }
                         if (kcContext.pageId === "login-reset-password.ftl") {
                             return <KcResetPasswordPage kcContext={kcContext} />;
+                        }
+                        if (kcContext.pageId === "login-verify-email.ftl") {
+                            return <KcVerifyEmailPage kcContext={kcContext} />;
                         }
                         return <KcLoginPage kcContext={kcContext} />;
                 }

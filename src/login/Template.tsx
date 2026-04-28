@@ -161,10 +161,8 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                                 );
                             })}
                         {displayInfo && (
-                            <div id="kc-info" className={kcClsx("kcSignUpClass")}>
-                                <div id="kc-info-wrapper" className={kcClsx("kcInfoAreaWrapperClass")}>
-                                    {infoNode}
-                                </div>
+                            <div id="kc-info">
+                                <div id="kc-info-wrapper">{infoNode}</div>
                             </div>
                         )}
                     </div>

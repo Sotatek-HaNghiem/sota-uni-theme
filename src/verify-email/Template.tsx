@@ -1,4 +1,3 @@
-import { kcSanitize } from "keycloakify/lib/kcSanitize";
 import { useInitialize } from "keycloakify/login/Template.useInitialize";
 import type { TemplateProps } from "keycloakify/login/TemplateProps";
 import { getKcClsx } from "keycloakify/login/lib/kcClsx";
@@ -11,27 +10,25 @@ import { I18n } from "./i18n/i18n";
 
 export default function Template(props: TemplateProps<KcContext, I18n>) {
     const {
-        displayInfo = false,
-        displayMessage = true,
-        headerNode,
-        infoNode = null,
         documentTitle,
         bodyClassName,
         kcContext,
         i18n,
         doUseDefaultCss,
         classes,
-        children
+        children,
+        displayInfo,
+        infoNode
     } = props;
 
     const { kcClsx } = getKcClsx({ doUseDefaultCss, classes });
 
     const { msg, msgStr } = i18n;
 
-    const { realm, auth, url, message, isAppInitiatedAction } = kcContext;
+    const { realm, auth, url } = kcContext;
 
     useEffect(() => {
-        document.title = documentTitle ?? msgStr("registerTitle", realm.displayName);
+        document.title = documentTitle ?? msgStr("emailVerifyTitle", realm.displayName);
     }, []);
 
     useSetClassName({
@@ -45,31 +42,6 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
     });
 
     const { isReadyToRender } = useInitialize({ kcContext, doUseDefaultCss });
-
-    useEffect(() => {
-        if (!isReadyToRender) return;
-
-        const setPlaceholders = () => {
-            const inputs = document.querySelectorAll("#kc-register-form input");
-            inputs.forEach(input => {
-                const name = input.getAttribute("name");
-                if (name) {
-                    const key = `${name}.placeholder`;
-                    const placeholder = msgStr(key as any);
-                    if (placeholder && placeholder !== key) {
-                        input.setAttribute("placeholder", placeholder);
-                    }
-                }
-            });
-        };
-
-        setPlaceholders();
-
-        const observer = new MutationObserver(setPlaceholders);
-        observer.observe(document.body, { childList: true, subtree: true });
-
-        return () => observer.disconnect();
-    }, [i18n, isReadyToRender]);
 
     if (!isReadyToRender) {
         return null;
@@ -106,6 +78,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
 
                         return node;
                     })()}
+
                     <div id="kc-header" className={kcClsx("kcHeaderClass")}>
                         <div
                             id="kc-header-wrapper"
@@ -115,55 +88,14 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                         </div>
                     </div>
 
-                    <h1 id="kc-page-title">{headerNode}</h1>
+                    <div className={clsx("kcHeaderContainer")}>
+                        <div className={clsx("kcHeaderTitle")}>
+                            {msg("emailVerifyTitle")}
+                        </div>
+                    </div>
                 </header>
                 <div id="kc-content">
                     <div id="kc-content-wrapper">
-                        {/* App-initiated actions should not see warning messages about the need to complete the action during login. */}
-                        {displayMessage &&
-                            message !== undefined &&
-                            (message.type !== "warning" || !isAppInitiatedAction) && (
-                                <div
-                                    className={clsx(
-                                        `alert-${message.type}`,
-                                        kcClsx("kcAlertClass"),
-                                        `pf-m-${message?.type === "error" ? "danger" : message.type}`
-                                    )}
-                                >
-                                    <div className="pf-c-alert__icon">
-                                        {message.type === "success" && (
-                                            <span
-                                                className={kcClsx(
-                                                    "kcFeedbackSuccessIcon"
-                                                )}
-                                            ></span>
-                                        )}
-                                        {message.type === "warning" && (
-                                            <span
-                                                className={kcClsx(
-                                                    "kcFeedbackWarningIcon"
-                                                )}
-                                            ></span>
-                                        )}
-                                        {message.type === "error" && (
-                                            <span
-                                                className={kcClsx("kcFeedbackErrorIcon")}
-                                            ></span>
-                                        )}
-                                        {message.type === "info" && (
-                                            <span
-                                                className={kcClsx("kcFeedbackInfoIcon")}
-                                            ></span>
-                                        )}
-                                    </div>
-                                    <span
-                                        className={kcClsx("kcAlertTitleClass")}
-                                        dangerouslySetInnerHTML={{
-                                            __html: kcSanitize(message.summary)
-                                        }}
-                                    />
-                                </div>
-                            )}
                         {children}
                         {auth !== undefined && auth.showTryAnotherWayLink && (
                             <form
@@ -192,13 +124,14 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                                 </div>
                             </form>
                         )}
-                        {displayInfo && (
-                            <div id="kc-info">
-                                <div id="kc-info-wrapper">{infoNode}</div>
-                            </div>
-                        )}
                     </div>
                 </div>
+
+                {displayInfo && (
+                    <div id="kc-info">
+                        <div id="kc-info-wrapper">{infoNode}</div>
+                    </div>
+                )}
             </div>
         </div>
     );
