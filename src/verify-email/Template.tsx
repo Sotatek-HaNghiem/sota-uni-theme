@@ -90,7 +90,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
 
                     <div className={clsx("kcHeaderContainer")}>
                         <div className={clsx("kcHeaderTitle")}>
-                            {msg("emailVerifyTitle")}
+                            {msg("emailVerifyAccountTitle")}
                         </div>
                     </div>
                 </header>

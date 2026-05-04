@@ -103,7 +103,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
 
                     <div className={clsx("kcHeaderContainer")}>
                         <div className={clsx("kcHeaderTitle")}>{msg("loginAccountTitle")}</div>
-                        <div className={clsx("kcHeaderDescription")}>{msg("loginDescription")}</div>
+                        {kcContext.pageId === "login.ftl" && <div className={clsx("kcHeaderDescription")}>{msg("loginDescription")}</div>}
                     </div>
                 </header>
                 <div id="kc-content">

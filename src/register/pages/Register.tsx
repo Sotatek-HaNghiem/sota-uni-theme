@@ -46,7 +46,7 @@ export default function Register(
                 <div id="kc-registration-container">
                     <div id="kc-registration">
                         <span>
-                            {msg("alreadyHaveAccount")}
+                            {msg("alreadyHaveAccount")}{" "}
                             <a href={url.loginUrl}>{msg("doLogIn")}</a>
                         </span>
                     </div>

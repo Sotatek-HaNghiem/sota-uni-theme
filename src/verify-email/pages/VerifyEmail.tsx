@@ -50,10 +50,11 @@ export default function VerifyEmail(
                         kcClsx("kcButtonBlockClass"),
                         kcClsx("kcButtonLargeClass")
                     )}
-                    onClick={() => (window.location.href = url.loginRestartFlowUrl)}
                     type="submit"
                 >
-                    {msg("backToLogin")}
+                    <a href={url.loginRestartFlowUrl} className={clsx("kcButtonBack")}>
+                        {msg("backToLogin")}
+                    </a>
                 </button>
             </div>
         </Template>

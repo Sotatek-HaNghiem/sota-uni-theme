@@ -28,11 +28,10 @@ body.kcFormCardClass {
 
 body.kcBodyClass {
     display: grid !important;
-    grid-template-columns: 1fr minmax(0, 700px);
+    grid-template-columns: 1fr 1fr !important;
     margin: 0 auto !important;
     padding: 0 !important;
     min-height: 100vh !important;
-    max-width: 1440px;
     background-image: none !important;
 }
 
@@ -45,8 +44,8 @@ body.kcBodyClass::after {
     margin: 24px;
     margin-left: 0px;
     border-radius: 20px;
-    max-width: 700px;
-    height: 976px;
+    min-width: 700px;
+    min-height: 976px;
     background-color: #fff !important;
 }
 
@@ -64,6 +63,7 @@ a {
     text-decoration: none;
     transition: color 0.2s ease;
     font-weight: 500;
+    outline: none !important;
 }
 
 a:hover {
@@ -353,7 +353,8 @@ input.pf-c-form-control:focus {
 
 .input-group #password,
 .pf-c-input-group #password,
-.pf-c-input-group #password-confirm {
+.pf-c-input-group #password-confirm,
+.pf-c-input-group #password-new {
     border-top-right-radius: 0 !important;
     border-bottom-right-radius: 0 !important;
     border-right: none !important;
@@ -405,6 +406,7 @@ input[type="checkbox"] {
     transition: all 0.2s ease;
     background-color: #fff;
     vertical-align: middle;
+    margin: 4px 0 4px 0;
 }
 
 input[type="checkbox"]:checked {
@@ -477,9 +479,22 @@ button[type="submit"]:active {
     color: #ef4444;
 }
 
+.kcFormPasswordVisibilityIconShow:before {
+    content: url("/assets/icon-eye-on.svg") !important;
+    width: 20px;
+    height: 20px;
+}
+
+.kcFormPasswordVisibilityIconHide:before {
+    content: url("/assets/icon-eye-off.svg") !important;
+    width: 20px;
+    height: 20px;
+}
+
 .pf-c-button:disabled {
     cursor: not-allowed;
     pointer-events: unset;
+    opacity: 0.5;
 }
 
 #kc-form-buttons {
@@ -497,7 +512,8 @@ button[type="submit"]:active {
 
 #kc-form-login,
 #kc-register-form,
-#kc-reset-password-form {
+#kc-reset-password-form,
+#kc-passwd-update-form {
     width: 360px;
 }
 
@@ -529,34 +545,41 @@ button[type="submit"]:active {
     width: 360px;
 }
 
-#kc-reset-password-form .form-group {
+#kc-reset-password-form .form-group,
+#kc-passwd-update-form .form-group {
     margin: 0;
 }
 
-#kc-reset-password-form .kcInputWrapperClass {
+#kc-reset-password-form .kcInputWrapperClass,
+#kc-passwd-update-form .kcInputWrapperClass {
     padding: 0;
 }
 
-#kc-reset-password-form .kcLabelWrapperClass {
+#kc-reset-password-form .kcLabelWrapperClass,
+#kc-passwd-update-form .kcLabelWrapperClass {
     padding: 0;
 }
 
-#kc-reset-password-form .kcFormOptionsClass {
+#kc-reset-password-form .kcFormOptionsClass,
+#kc-passwd-update-form .kcFormOptionsClass {
     padding: 0;
 }
 
-#kc-reset-password-form .kcFormButtonsClass {
+#kc-reset-password-form .kcFormButtonsClass,
+#kc-passwd-update-form .kcFormButtonsClass {
     padding: 0;
 }
 
-#kc-reset-password-form .kcFormSettingClass {
+#kc-reset-password-form .kcFormSettingClass,
+#kc-passwd-update-form .kcFormSettingClass {
     display: flex;
     flex-direction: column-reverse;
     gap: 12px;
     margin-bottom: 0px;
 }
 
-#kc-reset-password-form .kcFormButtonsClass {
+#kc-reset-password-form .kcFormButtonsClass,
+#kc-passwd-update-form .kcFormButtonsClass {
     margin-top: 0px;
 }
 
@@ -596,10 +619,27 @@ button[type="submit"]:active {
     font-weight: 400;
     color: #6b7280;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 .kcVerifyEmailContainer .kcEmailVerify {
     color: var(--primary-color);
+}
+
+.kcVerifyEmailContainer .kcButtonClass {
+    margin-top: 22px;
+}
+
+.kcVerifyEmailContainer .kcButtonBack {
+    color: var(--white-color) !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    &:hover {
+        color: var(--white-color) !important;
+        text-decoration: none !important;
+    }
 }
 
 /* INFO AREA (Không có tài khoản? Đăng ký) */
