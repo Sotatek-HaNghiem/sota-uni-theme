@@ -9,6 +9,6 @@ export const enMessages = {
     resetPasswordTitle: "Welcome to {0}",
     resetPasswordAccountTitle: "Forgot password",
     resetPasswordDescription: "A reset link will be sent to your email address.",
-    "email.placeholder": "Enter your email",
-    "username.placeholder": "Enter your username"
+    "email.placeholder": "Enter email",
+    "username.placeholder": "Enter email"
 };

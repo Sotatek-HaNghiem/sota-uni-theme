@@ -13,12 +13,15 @@ export const viMessages = {
     restartLoginTooltip: "Khởi động lại đăng nhập",
     doTryAnotherWay: "Thử cách khác",
     signInWithGoogle: "Đăng nhập với Google",
+    passwordNew: "Mật khẩu mới",
+    passwordConfirm: "Xác nhận mật khẩu",
+    logoutOtherSessions: "Đăng xuất khỏi các thiết bị khác",
     "email.placeholder": "Nhập email",
     "username.placeholder": "Nhập email",
     "password.placeholder": "Nhập mật khẩu",
     "credentialId.placeholder": "",
     "login.placeholder": "",
-    "password-new.placeholder": "",
-    "password-confirm.placeholder": "",
+    "password-new.placeholder": "Nhập mật khẩu mới",
+    "password-confirm.placeholder": "Xác nhận mật khẩu",
     "logout-sessions.placeholder": ""
 };

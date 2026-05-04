@@ -15,11 +15,11 @@ export const enMessages = {
     registerAccountTitle: "Sign up",
     registerDescription: "Create new account to join SotaUni",
     doTryAnotherWay: "Try another way",
-    "username.placeholder": "Enter your username",
-    "email.placeholder": "Enter your email",
-    "firstName.placeholder": "Enter your first name",
-    "lastName.placeholder": "Enter your last name",
-    "password.placeholder": "Enter your password",
-    "password-confirm.placeholder": "Confirm your password",
+    "username.placeholder": "Enter username",
+    "email.placeholder": "Enter email",
+    "firstName.placeholder": "Enter first name",
+    "lastName.placeholder": "Enter last name",
+    "password.placeholder": "Enter password",
+    "password-confirm.placeholder": "Confirm password",
     "locale.placeholder": ""
 };
