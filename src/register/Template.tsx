@@ -7,7 +7,7 @@ import { useSetClassName } from "keycloakify/tools/useSetClassName";
 import { useEffect } from "react";
 import type { KcContext } from "./KcContext";
 import logoUrl from "../login/assets/logo.svg";
-import { I18n } from "./i18n/i18n";
+import { I18n } from "./i18n";
 
 export default function Template(props: TemplateProps<KcContext, I18n>) {
     const {

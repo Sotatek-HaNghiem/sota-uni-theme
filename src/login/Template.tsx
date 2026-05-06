@@ -8,7 +8,7 @@ import { useEffect } from "react";
 import type { KcContext } from "./KcContext";
 import logoUrl from "./assets/logo.svg";
 import googleIconUrl from "./assets/google.svg";
-import { I18n } from "./i18n/i18n";
+import { I18n } from "./i18n";
 
 export default function Template(props: TemplateProps<KcContext, I18n>) {
     const {
