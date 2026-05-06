@@ -21,5 +21,13 @@ export const viMessages = {
     "lastName.placeholder": "Nhập họ",
     "password.placeholder": "Nhập mật khẩu",
     "password-confirm.placeholder": "Xác nhận mật khẩu",
-    "locale.placeholder": ""
+    "locale.placeholder": "",
+
+    "error-user-attribute-required": "Đây là trường bắt buộc.",
+    "error-pattern-no-match": "Định dạng không hợp lệ.",
+    invalidEmailMessage: "Định dạng email không hợp lệ.",
+    invalidPasswordConfirmMessage: "Mật khẩu xác nhận không khớp.",
+    invalidPasswordMinLengthMessage: "Mật khẩu phải chứa từ 8 đến 50 ký tự.",
+    invalidPasswordMaxLengthMessage: "Mật khẩu phải chứa từ 8 đến 50 ký tự.",
+    emailExistsMessage: "Email đã tồn tại. Vui lòng đăng nhập hoặc sử dụng email khác."
 };

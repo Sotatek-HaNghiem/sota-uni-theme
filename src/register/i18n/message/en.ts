@@ -15,11 +15,19 @@ export const enMessages = {
     registerAccountTitle: "Sign up",
     registerDescription: "Create new account to join SotaUni",
     doTryAnotherWay: "Try another way",
-    "username.placeholder": "Enter username",
-    "email.placeholder": "Enter email",
-    "firstName.placeholder": "Enter first name",
-    "lastName.placeholder": "Enter last name",
-    "password.placeholder": "Enter password",
-    "password-confirm.placeholder": "Confirm password",
-    "locale.placeholder": ""
+    "username.placeholder": "Enter your username",
+    "email.placeholder": "Enter your email",
+    "firstName.placeholder": "Enter your first name",
+    "lastName.placeholder": "Enter your last name",
+    "password.placeholder": "Enter your password",
+    "password-confirm.placeholder": "Confirm your password",
+    "locale.placeholder": "",
+
+    "error-user-attribute-required": "This is a required field",
+    "error-pattern-no-match": "Invalid format.",
+    invalidEmailMessage: "The email format is invalid.",
+    invalidPasswordConfirmMessage: "Confirm password do not match.",
+    invalidPasswordMinLengthMessage: "Password must contain 8 to 50 characters.",
+    invalidPasswordMaxLengthMessage: "Password must contain 8 to 50 characters.",
+    emailExistsMessage: "Email already exists. Please sign in or use another email."
 };

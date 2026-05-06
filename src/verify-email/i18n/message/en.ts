@@ -8,5 +8,5 @@ export const enMessages = {
     emailVerify2: "Please check your email and click the link to activate your account.",
     emailVerify3: "Didn’t receive the email?",
     doClickHere: "Resend",
-    backToLogin: "Back to Login"
+    backToLogin: "Back to Sign in"
 };

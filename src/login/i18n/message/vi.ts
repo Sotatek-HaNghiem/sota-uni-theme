@@ -23,5 +23,11 @@ export const viMessages = {
     "login.placeholder": "",
     "password-new.placeholder": "Nhập mật khẩu mới",
     "password-confirm.placeholder": "Xác nhận mật khẩu",
-    "logout-sessions.placeholder": ""
+    "logout-sessions.placeholder": "",
+
+    invalidUserMessage: "Tên đăng nhập hoặc mật khẩu không hợp lệ.",
+    invalidPasswordMessage: "Tên đăng nhập hoặc mật khẩu không hợp lệ.",
+    loginTimeoutMessage: "Phiên đăng nhập hết hạn. Vui lòng thử lại.",
+    emailSentMessage: "Bạn sẽ nhận được email hướng dẫn chi tiết trong thời gian ngắn.",
+    emailSendErrorMessage: "Không thể gửi email, vui lòng thử lại sau."
 };
