@@ -1,7 +1,9 @@
 import messages from "keycloakify/login/i18n/messages_defaultSet/en";
+import { enCommonMessages } from "../common/en";
 
 export const enMessages = {
     ...messages,
+    ...enCommonMessages,
     doSendResetLink: "Send reset link",
     backToLogin: "Back to Login",
     username: "Email",

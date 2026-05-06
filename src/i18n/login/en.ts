@@ -1,7 +1,9 @@
 import messages from "keycloakify/login/i18n/messages_defaultSet/en";
+import { enCommonMessages } from "../common/en";
 
 export const enMessages = {
     ...messages,
+    ...enCommonMessages,
     doForgotPassword: "Forgot password?",
     password: "Password",
     doLogIn: "Sign In",
@@ -26,8 +28,5 @@ export const enMessages = {
     "logout-sessions.placeholder": "",
 
     invalidUserMessage: "Invalid username or password.",
-    invalidPasswordMessage: "Invalid username or password.",
-    loginTimeoutMessage: "Login timeout. Please try again.",
-    emailSentMessage: "You should receive an email shortly with further instructions.",
-    emailSendErrorMessage: "Could not send email, please try again later."
+    invalidPasswordMessage: "Invalid username or password."
 };

@@ -1,12 +1,12 @@
 import { Suspense } from "react";
 import type { ClassKey } from "keycloakify/login";
 import type { KcContext } from "./KcContext";
-import { useI18n } from "./i18n/i18n";
+import { useI18n } from "./i18n";
 import DefaultPage from "keycloakify/login/DefaultPage";
 import Template from "./Template";
 import UserProfileFormFields from "keycloakify/login/UserProfileFormFields";
 import VerifyEmail from "./pages/VerifyEmail";
-import "../login/style/main.css";
+import "../style/main.css";
 
 const doMakeUserConfirmPassword = true;
 

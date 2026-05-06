@@ -1,7 +1,9 @@
 import messages from "keycloakify/login/i18n/messages_defaultSet/en";
+import { viCommonMessages } from "../common/vi";
 
 export const viMessages = {
     ...messages,
+    ...viCommonMessages,
     emailVerifyTitle: "Chào mừng đến với {0}",
     emailVerifyAccountTitle: "Tạo tài khoản thành công!",
     emailVerify1: "Chúng tôi đã gửi liên kết xác thực đến",

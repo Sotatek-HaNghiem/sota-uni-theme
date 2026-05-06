@@ -1,7 +1,9 @@
 import messages from "keycloakify/login/i18n/messages_defaultSet/en";
+import { viCommonMessages } from "../common/vi";
 
 export const viMessages = {
     ...messages,
+    ...viCommonMessages,
     doRegister: "Đăng ký",
     doLogIn: "Đăng nhập",
     username: "Tên người dùng",
