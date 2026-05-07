@@ -21,11 +21,8 @@ export const enMessages = {
     "email.placeholder": "Enter your email",
     "username.placeholder": "Enter your email",
     "password.placeholder": "Enter your password",
-    "credentialId.placeholder": "",
-    "login.placeholder": "",
     "password-new.placeholder": "Enter your new password",
     "password-confirm.placeholder": "Confirm your password",
-    "logout-sessions.placeholder": "",
 
     invalidUserMessage: "Invalid username or password.",
     invalidPasswordMessage: "Invalid username or password."

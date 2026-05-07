@@ -55,9 +55,11 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                 const name = input.getAttribute("name");
                 if (name) {
                     const key = `${name}.placeholder`;
-                    const placeholder = msgStr(key as any);
-                    if (placeholder && placeholder !== key) {
-                        input.setAttribute("placeholder", placeholder);
+                    try {
+                        const placeholder = msgStr(key as any);
+                        input.setAttribute("placeholder", placeholder && placeholder !== key ? placeholder : "");
+                    } catch (e) {
+                        input.setAttribute("placeholder", "");
                     }
                 }
             });

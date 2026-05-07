@@ -23,7 +23,6 @@ export const viMessages = {
     "lastName.placeholder": "Nhập họ",
     "password.placeholder": "Nhập mật khẩu",
     "password-confirm.placeholder": "Xác nhận mật khẩu",
-    "locale.placeholder": "",
 
     "error-user-attribute-required": "Đây là trường bắt buộc.",
     "error-pattern-no-match": "Định dạng không hợp lệ.",

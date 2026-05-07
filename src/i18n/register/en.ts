@@ -23,7 +23,6 @@ export const enMessages = {
     "lastName.placeholder": "Enter your last name",
     "password.placeholder": "Enter your password",
     "password-confirm.placeholder": "Confirm your password",
-    "locale.placeholder": "",
 
     "error-user-attribute-required": "This is a required field",
     "error-pattern-no-match": "Invalid format.",

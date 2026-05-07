@@ -145,6 +145,10 @@ a:hover {
     font-size: 14px;
 }
 
+.kcFormClass {
+    width: 100%;
+}
+
 .kcGoogleLoginBtn {
     display: flex;
     justify-content: center;
@@ -650,6 +654,10 @@ button[type="submit"]:active {
 
 #kc-info-wrapper a {
     font-weight: 600;
+}
+
+.instruction {
+    font-size: 16px;
 }
 
 /* ALERTS */

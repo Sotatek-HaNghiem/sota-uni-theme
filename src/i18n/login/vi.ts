@@ -21,11 +21,8 @@ export const viMessages = {
     "email.placeholder": "Nhập email",
     "username.placeholder": "Nhập email",
     "password.placeholder": "Nhập mật khẩu",
-    "credentialId.placeholder": "",
-    "login.placeholder": "",
     "password-new.placeholder": "Nhập mật khẩu mới",
     "password-confirm.placeholder": "Xác nhận mật khẩu",
-    "logout-sessions.placeholder": "",
 
     invalidUserMessage: "Tên đăng nhập hoặc mật khẩu không hợp lệ.",
     invalidPasswordMessage: "Tên đăng nhập hoặc mật khẩu không hợp lệ."
