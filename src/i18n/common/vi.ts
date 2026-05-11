@@ -1,5 +1,6 @@
 export const viCommonMessages = {
     loginTimeoutMessage: "Phiên đăng nhập hết hạn. Vui lòng thử lại.",
+    loginTimeout: "Phiên đăng nhập của bạn đã hết hạn. Đăng nhập sẽ bắt đầu lại từ đầu.",
     emailSentMessage: "Bạn sẽ nhận được email hướng dẫn chi tiết trong thời gian ngắn.",
     emailSendErrorMessage: "Không thể gửi email, vui lòng thử lại sau.",
     resetPasswordMessage: "Bạn cần thay đổi mật khẩu.",
@@ -8,5 +9,10 @@ export const viCommonMessages = {
     expiredActionTokenNoSessionMessage: "Liên kết xác thực đã hết hạn.",
     expiredActionTokenSessionExistsMessage: "Phiên hết hạn. Vui lòng đăng nhập lại.",
     pageExpiredMsg1: "Để khởi động lại quá trình đăng nhập",
-    pageExpiredMsg2: "Để tiếp tục quá trình đăng nhập"
+    pageExpiredMsg2: "Để tiếp tục quá trình đăng nhập",
+    missingFirstNameMessage: "Đây là trường bắt buộc.",
+    missingLastNameMessage: "Đây là trường bắt buộc.",
+    missingEmailMessage: "Đây là trường bắt buộc.",
+    missingUsernameMessage: "Đây là trường bắt buộc.",
+    missingPasswordMessage: "Đây là trường bắt buộc."
 };

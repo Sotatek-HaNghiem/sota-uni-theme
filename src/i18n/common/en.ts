@@ -1,5 +1,6 @@
 export const enCommonMessages = {
     loginTimeoutMessage: "Login timeout. Please try again.",
+    loginTimeout: "Your login attempt timed out. Login will start from the beginning.",
     emailSentMessage: "You should receive an email shortly with further instructions.",
     emailSendErrorMessage: "Could not send email, please try again later.",
     resetPasswordMessage: "You need to change your password.",
@@ -8,5 +9,10 @@ export const enCommonMessages = {
     expiredActionTokenNoSessionMessage: "Your authentication link has expired.",
     expiredActionTokenSessionExistsMessage: "Action expired. Please start again.",
     pageExpiredMsg1: "To restart the login process",
-    pageExpiredMsg2: "To continue the login process"
+    pageExpiredMsg2: "To continue the login process",
+    missingFirstNameMessage: "This is a required field.",
+    missingLastNameMessage: "This is a required field.",
+    missingEmailMessage: "This is a required field.",
+    missingUsernameMessage: "This is a required field.",
+    missingPasswordMessage: "This is a required field."
 };

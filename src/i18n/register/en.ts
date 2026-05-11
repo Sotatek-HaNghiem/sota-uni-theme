@@ -24,7 +24,7 @@ export const enMessages = {
     "password.placeholder": "Enter your password",
     "password-confirm.placeholder": "Confirm your password",
 
-    "error-user-attribute-required": "This is a required field",
+    "error-user-attribute-required": "This is a required field.",
     "error-pattern-no-match": "Invalid format.",
     invalidEmailMessage: "The email format is invalid.",
     invalidPasswordConfirmMessage: "Confirm password do not match.",
