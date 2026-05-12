@@ -7,6 +7,7 @@ export const viMessages = {
     doSendResetLink: "Gửi liên kết đặt lại mật khẩu",
     backToLogin: "Quay lại đăng nhập",
     username: 'Email <span class="label-required">*</span>',
+    email: 'Email <span class="label-required">*</span>',
     doSubmit: "Gửi",
     resetPasswordTitle: "Chào mừng đến với {0}",
     resetPasswordAccountTitle: "Quên mật khẩu",

@@ -33,17 +33,11 @@ export default function KcPage(props: { kcContext: KcContext }) {
                                         get: fieldName => {
                                             const msg =
                                                 kcContext.messagesPerField.get(fieldName);
-                                            if (fieldName === "email") {
-                                                if (msg === emailExistsMessage) {
-                                                    return i18n.msgStr(
-                                                        "emailExistsMessage"
-                                                    );
-                                                }
-                                                if (msg === invalidEmailMessage) {
-                                                    return i18n.msgStr(
-                                                        "invalidEmailMessage"
-                                                    );
-                                                }
+                                            if (msg === emailExistsMessage) {
+                                                return i18n.msgStr("emailExistsMessage");
+                                            }
+                                            if (msg === invalidEmailMessage) {
+                                                return i18n.msgStr("invalidEmailMessage");
                                             }
                                             return msg;
                                         },
@@ -52,17 +46,15 @@ export default function KcPage(props: { kcContext: KcContext }) {
                                                 const msg =
                                                     kcContext.messagesPerField.get(name);
                                                 if (msg !== undefined && msg !== "") {
-                                                    if (name === "email") {
-                                                        if (msg === emailExistsMessage) {
-                                                            return i18n.msgStr(
-                                                                "emailExistsMessage"
-                                                            );
-                                                        }
-                                                        if (msg === invalidEmailMessage) {
-                                                            return i18n.msgStr(
-                                                                "invalidEmailMessage"
-                                                            );
-                                                        }
+                                                    if (msg === emailExistsMessage) {
+                                                        return i18n.msgStr(
+                                                            "emailExistsMessage"
+                                                        );
+                                                    }
+                                                    if (msg === invalidEmailMessage) {
+                                                        return i18n.msgStr(
+                                                            "invalidEmailMessage"
+                                                        );
                                                     }
                                                     return msg;
                                                 }

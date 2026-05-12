@@ -17,6 +17,8 @@ export const enMessages = {
     registerAccountTitle: "Sign up",
     registerDescription: "Create new account to join SotaUni",
     doTryAnotherWay: "Try another way",
+    "First name": "First name",
+    "Last name": "Last name",
     "username.placeholder": "Enter your username",
     "email.placeholder": "Enter your email",
     "firstName.placeholder": "Enter your first name",

@@ -7,6 +7,7 @@ export const enMessages = {
     doSendResetLink: "Send reset link",
     backToLogin: "Back to Login",
     username: 'Email <span class="label-required">*</span>',
+    email: 'Email <span class="label-required">*</span>',
     doSubmit: "Send reset link",
     resetPasswordTitle: "Welcome to {0}",
     resetPasswordAccountTitle: "Forgot password",

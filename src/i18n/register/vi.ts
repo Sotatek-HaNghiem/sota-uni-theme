@@ -17,6 +17,8 @@ export const viMessages = {
     registerAccountTitle: "Đăng ký",
     registerDescription: "Tạo tài khoản mới để tham gia SotaUni",
     doTryAnotherWay: "Thử cách khác",
+    "First name": "Tên",
+    "Last name": "Họ",
     "username.placeholder": "Nhập tên người dùng",
     "email.placeholder": "Nhập email",
     "firstName.placeholder": "Nhập tên",
