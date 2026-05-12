@@ -7,7 +7,7 @@
 
 // noinspection JSUnusedGlobalSymbols
 
-import { lazy, Suspense, type ReactNode } from "react";
+import { lazy, Suspense, useEffect, type ReactNode } from "react";
 
 export type ThemeName = "SotaUni";
 
@@ -39,6 +39,34 @@ export const KcVerifyEmailPage = lazy(() => import("./verify-email/KcPage"));
 
 export function KcPage(props: { kcContext: KcContext; fallback?: ReactNode }) {
     const { kcContext, fallback } = props;
+
+    useEffect(() => {
+        const handleInput = (e: Event) => {
+            const target = e.target as HTMLInputElement | HTMLTextAreaElement;
+            if (
+                !target ||
+                ![
+                    "username",
+                    "password",
+                    "email",
+                    "firstName",
+                    "lastName",
+                    "password-confirm",
+                    "password-new"
+                ].includes(target.name)
+            )
+                return;
+
+            const emojiRegex = /\p{Extended_Pictographic}/gu;
+            if (emojiRegex.test(target.value)) {
+                target.value = target.value.replace(emojiRegex, "");
+            }
+        };
+
+        document.addEventListener("input", handleInput, true);
+        return () => document.removeEventListener("input", handleInput, true);
+    }, []);
+
     return (
         <Suspense fallback={fallback}>
             {(() => {

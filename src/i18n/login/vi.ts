@@ -5,7 +5,8 @@ export const viMessages = {
     ...messages,
     ...viCommonMessages,
     doForgotPassword: "Quên mật khẩu?",
-    password: "Mật khẩu",
+    email: "Email *",
+    password: "Mật khẩu *",
     doLogIn: "Đăng nhập",
     doRegister: "Đăng ký",
     noAccount: "Chưa có tài khoản?",
@@ -22,8 +23,5 @@ export const viMessages = {
     "username.placeholder": "Nhập email",
     "password.placeholder": "Nhập mật khẩu",
     "password-new.placeholder": "Nhập mật khẩu mới",
-    "password-confirm.placeholder": "Xác nhận mật khẩu",
-
-    invalidUserMessage: "Tên đăng nhập hoặc mật khẩu không hợp lệ.",
-    invalidPasswordMessage: "Tên đăng nhập hoặc mật khẩu không hợp lệ."
+    "password-confirm.placeholder": "Xác nhận mật khẩu"
 };

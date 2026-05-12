@@ -14,6 +14,8 @@ export default function KcPage(props: { kcContext: KcContext }) {
 
     const { i18n } = useI18n({ kcContext });
 
+    const invalidUserMessage = "Please specify username.";
+
     return (
         <Suspense>
             {(() => {
@@ -21,7 +23,33 @@ export default function KcPage(props: { kcContext: KcContext }) {
                     default:
                         return (
                             <DefaultPage
-                                kcContext={kcContext}
+                                kcContext={{
+                                    ...kcContext,
+                                    messagesPerField: {
+                                        ...kcContext.messagesPerField,
+                                        get: fieldName => {
+                                            const msg =
+                                                kcContext.messagesPerField.get(fieldName);
+                                            return msg === invalidUserMessage
+                                                ? i18n.msgStr("missingEmailMessage")
+                                                : msg;
+                                        },
+                                        getFirstError: (...fieldNames) => {
+                                            for (const name of fieldNames) {
+                                                const msg =
+                                                    kcContext.messagesPerField.get(name);
+                                                if (msg !== undefined && msg !== "") {
+                                                    return msg === invalidUserMessage
+                                                        ? i18n.msgStr(
+                                                              "missingEmailMessage"
+                                                          )
+                                                        : msg;
+                                                }
+                                            }
+                                            return "";
+                                        }
+                                    }
+                                }}
                                 i18n={i18n}
                                 classes={classes}
                                 Template={Template}

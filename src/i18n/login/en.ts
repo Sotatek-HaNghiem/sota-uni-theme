@@ -5,7 +5,8 @@ export const enMessages = {
     ...messages,
     ...enCommonMessages,
     doForgotPassword: "Forgot password?",
-    password: "Password",
+    email: "Email *",
+    password: "Password *",
     doLogIn: "Sign In",
     doRegister: "Sign Up",
     noAccount: "Don’t have an account?",
@@ -22,8 +23,5 @@ export const enMessages = {
     "username.placeholder": "Enter your email",
     "password.placeholder": "Enter your password",
     "password-new.placeholder": "Enter your new password",
-    "password-confirm.placeholder": "Confirm your password",
-
-    invalidUserMessage: "Invalid username or password.",
-    invalidPasswordMessage: "Invalid username or password."
+    "password-confirm.placeholder": "Confirm your password"
 };

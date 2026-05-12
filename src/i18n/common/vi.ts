@@ -1,4 +1,6 @@
 export const viCommonMessages = {
+    invalidUserMessage: "Tên đăng nhập hoặc mật khẩu không hợp lệ.",
+    invalidPasswordMessage: "Mật khẩu không hợp lệ.",
     loginTimeoutMessage: "Phiên đăng nhập hết hạn. Vui lòng thử lại.",
     loginTimeout: "Phiên đăng nhập của bạn đã hết hạn. Đăng nhập sẽ bắt đầu lại từ đầu.",
     emailSentMessage: "Bạn sẽ nhận được email hướng dẫn chi tiết trong thời gian ngắn.",

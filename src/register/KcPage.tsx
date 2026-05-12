@@ -16,6 +16,9 @@ export default function KcPage(props: { kcContext: KcContext }) {
 
     const { i18n } = useI18n({ kcContext });
 
+    const emailExistsMessage = "Email already exists.";
+    const invalidEmailMessage = "Invalid email address.";
+
     return (
         <Suspense>
             {(() => {
@@ -23,7 +26,51 @@ export default function KcPage(props: { kcContext: KcContext }) {
                     case "register.ftl":
                         return (
                             <Register
-                                kcContext={kcContext}
+                                kcContext={{
+                                    ...kcContext,
+                                    messagesPerField: {
+                                        ...kcContext.messagesPerField,
+                                        get: fieldName => {
+                                            const msg =
+                                                kcContext.messagesPerField.get(fieldName);
+                                            if (fieldName === "email") {
+                                                if (msg === emailExistsMessage) {
+                                                    return i18n.msgStr(
+                                                        "emailExistsMessage"
+                                                    );
+                                                }
+                                                if (msg === invalidEmailMessage) {
+                                                    return i18n.msgStr(
+                                                        "invalidEmailMessage"
+                                                    );
+                                                }
+                                            }
+                                            return msg;
+                                        },
+                                        getFirstError: (...fieldNames) => {
+                                            for (const name of fieldNames) {
+                                                const msg =
+                                                    kcContext.messagesPerField.get(name);
+                                                if (msg !== undefined && msg !== "") {
+                                                    if (name === "email") {
+                                                        if (msg === emailExistsMessage) {
+                                                            return i18n.msgStr(
+                                                                "emailExistsMessage"
+                                                            );
+                                                        }
+                                                        if (msg === invalidEmailMessage) {
+                                                            return i18n.msgStr(
+                                                                "invalidEmailMessage"
+                                                            );
+                                                        }
+                                                    }
+                                                    return msg;
+                                                }
+                                            }
+                                            return "";
+                                        }
+                                    }
+                                }}
                                 i18n={i18n}
                                 classes={classes}
                                 Template={Template}

@@ -1,4 +1,6 @@
 export const enCommonMessages = {
+    invalidUserMessage: "Invalid username or password.",
+    invalidPasswordMessage: "Invalid password.",
     loginTimeoutMessage: "Login timeout. Please try again.",
     loginTimeout: "Your login attempt timed out. Login will start from the beginning.",
     emailSentMessage: "You should receive an email shortly with further instructions.",
