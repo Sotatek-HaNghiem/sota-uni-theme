@@ -55,7 +55,23 @@ export default function Register(
         >
             <form id="kc-register-form" action={url.registrationAction} method="post">
                 <UserProfileFormFields
-                    kcContext={kcContext}
+                    kcContext={{
+                        ...kcContext,
+                        profile: {
+                            ...kcContext.profile,
+                            attributesByName: {
+                                ...kcContext.profile.attributesByName,
+                                firstName: {
+                                    ...kcContext.profile.attributesByName.firstName,
+                                    displayName: msgStr("firstName")
+                                },
+                                lastName: {
+                                    ...kcContext.profile.attributesByName.lastName,
+                                    displayName: msgStr("lastName")
+                                }
+                            }
+                        }
+                    }}
                     onIsFormSubmittableValueChange={setIsFormValid}
                     i18n={i18n}
                     kcClsx={kcClsx}

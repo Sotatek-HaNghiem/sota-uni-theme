@@ -288,7 +288,7 @@ a:hover {
 }
 
 .form-group label {
-    color: #4b5563;
+    color: #4b5563 !important;
     font-weight: 500;
     font-size: 14px;
     margin-bottom: 4px;
@@ -527,6 +527,13 @@ button[type="submit"]:active {
 #kc-register-form .kcFormButtonsClass {
     margin: 0;
     padding: 0;
+}
+
+#kc-register-form .kcLabelWrapperClass,
+#kc-form-login .label-required,
+#kc-reset-password-form .label-required,
+#kc-passwd-update-form .label-required {
+    color: #ef4444;
 }
 
 #kc-info {

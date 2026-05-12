@@ -67,6 +67,38 @@ export function KcPage(props: { kcContext: KcContext; fallback?: ReactNode }) {
         return () => document.removeEventListener("input", handleInput, true);
     }, []);
 
+    useEffect(() => {
+        const handleBlur = (e: Event) => {
+            const target = e.target as HTMLInputElement | HTMLTextAreaElement;
+            if (
+                !target ||
+                !["username", "email", "firstName", "lastName"].includes(target.name)
+            )
+                return;
+
+            const value = target.value;
+            const trimmedValue = value.trim();
+            if (value !== trimmedValue) {
+                const setter = Object.getOwnPropertyDescriptor(
+                    window.HTMLInputElement.prototype,
+                    "value"
+                )?.set;
+                if (setter) {
+                    setter.call(target, trimmedValue);
+                } else {
+                    target.value = trimmedValue;
+                }
+                target.dispatchEvent(new Event("input", { bubbles: true }));
+            }
+        };
+
+        document.addEventListener("blur", handleBlur, true);
+
+        return () => {
+            document.removeEventListener("blur", handleBlur, true);
+        };
+    }, []);
+
     return (
         <Suspense fallback={fallback}>
             {(() => {
