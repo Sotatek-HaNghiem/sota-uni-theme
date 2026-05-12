@@ -29,7 +29,7 @@ export const enMessages = {
     "error-user-attribute-required": "This is a required field.",
     "error-pattern-no-match": "Invalid format.",
     invalidEmailMessage: "The email format is invalid.",
-    invalidPasswordConfirmMessage: "Confirm password do not match.",
+    invalidPasswordConfirmMessage: "Confirm password does not match.",
     invalidPasswordMinLengthMessage: "Password must contain 8 to 50 characters.",
     invalidPasswordMaxLengthMessage: "Password must contain 8 to 50 characters.",
     emailExistsMessage: "Email already exists. Please sign in or use another email."

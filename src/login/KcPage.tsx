@@ -16,6 +16,7 @@ export default function KcPage(props: { kcContext: KcContext }) {
 
     const invalidUserMessage = "Invalid username or password.";
     const invalidPasswordMessage = "Please specify password.";
+    const invalidConfirmPasswordMessage = "Passwords don't match.";
 
     return (
         <Suspense>
@@ -39,6 +40,11 @@ export default function KcPage(props: { kcContext: KcContext }) {
                                                     "invalidPasswordMessage"
                                                 );
                                             }
+                                            if (msg === invalidConfirmPasswordMessage) {
+                                                return i18n.msgStr(
+                                                    "invalidConfirmPasswordMessage"
+                                                );
+                                            }
                                             return msg;
                                         },
                                         getFirstError: (...fieldNames) => {
@@ -54,6 +60,14 @@ export default function KcPage(props: { kcContext: KcContext }) {
                                                     if (msg === invalidPasswordMessage) {
                                                         return i18n.msgStr(
                                                             "invalidPasswordMessage"
+                                                        );
+                                                    }
+                                                    if (
+                                                        msg ===
+                                                        invalidConfirmPasswordMessage
+                                                    ) {
+                                                        return i18n.msgStr(
+                                                            "invalidConfirmPasswordMessage"
                                                         );
                                                     }
                                                     return msg;
