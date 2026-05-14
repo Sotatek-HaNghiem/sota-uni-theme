@@ -4,6 +4,7 @@ import type { KcContext } from "./KcContext";
 import { useI18n } from "./i18n";
 import DefaultPage from "keycloakify/login/DefaultPage";
 import Template from "./Template";
+import { defaultLocale } from "../kc.gen";
 import UserProfileFormFields from "keycloakify/login/UserProfileFormFields";
 import "../style/main.css";
 
@@ -14,7 +15,19 @@ const Register = lazy(() => import("./pages/Register"));
 export default function KcPage(props: { kcContext: KcContext }) {
     const { kcContext } = props;
 
-    const { i18n } = useI18n({ kcContext });
+    const locale = localStorage.getItem("locale") || defaultLocale;
+
+    const { i18n } = useI18n({
+        kcContext: {
+            ...kcContext,
+            locale: locale
+                ? {
+                      ...kcContext.locale,
+                      currentLanguageTag: locale
+                  }
+                : kcContext.locale
+        }
+    } as any);
 
     const emailExistsMessage = "Email already exists.";
     const invalidEmailMessage = "Invalid email address.";

@@ -32,6 +32,8 @@ declare global {
     }
 }
 
+export const defaultLocale = "en";
+
 export const KcLoginPage = lazy(() => import("./login/KcPage"));
 export const KcRegisterPage = lazy(() => import("./register/KcPage"));
 export const KcResetPasswordPage = lazy(() => import("./reset-password/KcPage"));
@@ -39,6 +41,18 @@ export const KcVerifyEmailPage = lazy(() => import("./verify-email/KcPage"));
 
 export function KcPage(props: { kcContext: KcContext; fallback?: ReactNode }) {
     const { kcContext, fallback } = props;
+
+    const localeFromUrl =
+        typeof window !== "undefined"
+            ? new URLSearchParams(window.location.search).get("locale") ||
+              localStorage.getItem("locale")
+            : null;
+
+    useEffect(() => {
+        if (localeFromUrl) {
+            localStorage.setItem("locale", localeFromUrl);
+        }
+    }, [localeFromUrl]);
 
     useEffect(() => {
         const handleInput = (e: Event) => {

@@ -17,5 +17,7 @@ export const enCommonMessages = {
     missingLastNameMessage: "This is a required field.",
     missingEmailMessage: "This is a required field.",
     missingUsernameMessage: "This is a required field.",
-    missingPasswordMessage: "This is a required field."
+    missingPasswordMessage: "This is a required field.",
+    logoutConfirmHeader: "Do you want to log out?",
+    doLogout: "Logout"
 };

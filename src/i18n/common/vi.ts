@@ -17,5 +17,7 @@ export const viCommonMessages = {
     missingLastNameMessage: "Đây là trường bắt buộc.",
     missingEmailMessage: "Đây là trường bắt buộc.",
     missingUsernameMessage: "Đây là trường bắt buộc.",
-    missingPasswordMessage: "Đây là trường bắt buộc."
+    missingPasswordMessage: "Đây là trường bắt buộc.",
+    logoutConfirmHeader: "Bạn có muốn đăng xuất không?",
+    doLogout: "Đăng xuất"
 };
